@@ -9,7 +9,7 @@ from itemadapter import ItemAdapter
 import openpyxl
 from botfiimobile.settings import XLSX_PATH
 
-CAMPOS = ['Papel','Segmento','Dividend Yield','P/VP','Valor de Mercado','Liquidez']
+CAMPOS = ['Papel','Segmento','Dividend Yield','P/VP','Valor de Mercado','Liquidez','Link']
 class BotfiimobilePipeline(object):
     planilha = None
     sheet = None
@@ -21,7 +21,7 @@ class BotfiimobilePipeline(object):
 
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
-        self.sheet.append([adapter.get('Papel'),adapter.get('Segmento'),adapter.get('Dividend Yield'),adapter.get('P/VP'),adapter.get('Valor de Mercado'),adapter.get('Liquidez')])
+        self.sheet.append([adapter.get('Papel'),adapter.get('Segmento'),adapter.get('Dividend Yield'),adapter.get('P/VP'),adapter.get('Valor de Mercado'),adapter.get('Liquidez'),adapter.get('Link')])
 
         return item
     

@@ -32,4 +32,5 @@ class FiimobbotSpider(scrapy.Spider):
                 'P/VP': linha.xpath('./td[6]/text()').get(default='N/A'),
                 'Valor de Mercado': linha.xpath('./td[7]/text()').get(default='N/A'),
                 'Liquidez': linha.xpath('./td[8]/text()').get(default='N/A'),
+                'Link' : 'https://www.fundamentus.com.br/' + linha.xpath('.//a/@href').get(default='N/A')
             }
